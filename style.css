@@ -1,0 +1,50 @@
+.top,
+.bottom,
+.middle,
+.layer,
+.inner_box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.corner_box {
+    width: 40%;
+}
+
+.box {
+    width: 20%;
+}
+
+#red {
+    background-color: red;
+    width: 40%;
+}
+
+#yellow {
+    background-color: yellow;
+    width: 40%;
+}
+
+.layer div {
+    border: 1px solid;
+    width: 30%;
+}
+
+.inner_box div {
+    border: 1px solid;
+    width: 100%;
+}
+
+#blue {
+    background-color: blue;
+    width: 40%;
+}
+
+#green {
+    background-color: green;
+    width: 40%;
+}
+
+.display_none {
+    display: none;
+}

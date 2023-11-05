@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ludo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <!--   TOP  -->
+      <div class="top">
+        <div id="red">
+          <div>
+            <button
+              class="red_btn"
+              type="button"
+              onclick="onplayerClick(event)"
+              value="red_one"
+            >
+              one
+            </button>
+            <button
+              class="red_btn"
+              type="button"
+              onclick="onplayerClick(event)"
+              value="red_two"
+            >
+              two
+            </button>
+            <button
+              class="red_btn"
+              type="button"
+              onclick="onplayerClick(event)"
+              value="red_three"
+            >
+              three
+            </button>
+            <button
+              class="red_btn"
+              type="button"
+              onclick="onplayerClick(event)"
+              value="red_four"
+            >
+              four
+            </button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="layer">
+            <div data-divValue="50">box 50</div>
+            <div data-divValue="51">box 51</div>
+            <div data-divValue="0">box 0</div>
+          </div>
+
+          <div class="layer">
+            <div data-divValue="49">box 49</div>
+            <div data-divValue="H_G_1">H_G_1</div>
+            <div data-divValue="1">box 1</div>
+          </div>
+          <div class="layer">
+            <div data-divValue="48">box 48</div>
+            <div data-divValue="H_G_2">H_G_2</div>
+            <div data-divValue="2">box 2</div>
+          </div>
+
+          <div class="layer">
+            <div data-divValue="47">box 47</div>
+            <div data-divValue="H_G_3">H_G_3</div>
+            <div data-divValue="3">box 3</div>
+          </div>
+          <div class="layer">
+            <div data-divValue="46">box 46</div>
+            <div data-divValue="H_G_4">H_G_4</div>
+            <div data-divValue="4">box 4</div>
+          </div>
+          <div class="layer">
+            <div data-divValue="45">box 45</div>
+            <div data-divValue="H_G_5">H_G_5</div>
+            <div data-divValue="5">box 5</div>
+          </div>
+        </div>
+        <div id="green">
+          <div>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="green_one"
+            >
+              one
+            </button>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="green_two"
+            >
+              two
+            </button>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="green_three"
+            >
+              three
+            </button>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="green_four"
+            >
+              four
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- TOP END -->
+
+      <!-- MIDDLE -->
+      <div class="middle">
+        <div class="corner_box">
+          <div class="inner_box">
+            <div data-divValue="39">box 39</div>
+            <div data-divValue="40">box 40</div>
+            <div data-divValue="41">box 41</div>
+            <div data-divValue="42">box 42</div>
+            <div data-divValue="43">box 43</div>
+            <div data-divValue="44">box 44</div>
+          </div>
+          <div class="inner_box">
+            <div data-divValue="38">box 38</div>
+            <div data-divValue="H_R_1">H_R_1</div>
+            <div data-divValue="H_R_2">H_R_2</div>
+            <div data-divValue="H_R_3">H_R_3</div>
+            <div data-divValue="H_R_4">H_R_4</div>
+            <div data-divValue="H_R_5">H_R_5</div>
+          </div>
+          <div class="inner_box">
+            <div data-divValue="37">box 37</div>
+            <div data-divValue="36">box 36</div>
+            <div data-divValue="35">box 35</div>
+            <div data-divValue="34">box 34</div>
+            <div data-divValue="33">box 33</div>
+            <div data-divValue="32">box 32</div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="layer">
+            <div>l</div>
+            <div>m</div>
+            <div>r</div>
+          </div>
+
+          <div class="layer">
+            <div>l</div>
+            <div>m</div>
+            <div>r</div>
+          </div>
+          <div class="layer">
+            <div>l</div>
+            <div>m</div>
+            <div>r</div>
+          </div>
+        </div>
+        <div class="corner_box">
+          <div class="inner_box">
+            <div data-divValue="6">box 6</div>
+            <div data-divValue="7">box 7</div>
+            <div data-divValue="8">box 8</div>
+            <div data-divValue="9">box 9</div>
+            <div data-divValue="10">box 10</div>
+            <div data-divValue="11">box 11</div>
+          </div>
+          <div class="inner_box">
+            <div data-divValue="H_Y_1">H_Y_1</div>
+            <div data-divValue="H_Y_2">H_Y_2</div>
+            <div data-divValue="H_Y_3">H_Y_3</div>
+            <div data-divValue="H_Y_4">H_Y_4</div>
+            <div data-divValue="H_Y_5">H_Y_5</div>
+            <div data-divValue="12">box 12</div>
+          </div>
+          <div class="inner_box">
+            <div data-divValue="18">box 18</div>
+            <div data-divValue="17">box 17</div>
+            <div data-divValue="16">box 16</div>
+            <div data-divValue="15">box 15</div>
+            <div data-divValue="14">box 14</div>
+            <div data-divValue="13">box 13</div>
+          </div>
+        </div>
+      </div>
+      <!-- MIDDLE END-->
+
+      <!--  BOTTOM   -->
+      <div class="bottom">
+        <div id="blue">
+          <div>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="blue_one"
+            >
+              one
+            </button>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="blue_two"
+            >
+              two
+            </button>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="blue_three"
+            >
+              three
+            </button>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="blue_four"
+            >
+              four
+            </button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="layer">
+            <div data-divValue="31">box 31</div>
+            <div data-divValue="H_B_1">H_B_1</div>
+            <div data-divValue="19">box 19</div>
+          </div>
+
+          <div class="layer">
+            <div data-divValue="30">box 30</div>
+            <div data-divValue="H_B_2">H_B_2</div>
+            <div data-divValue="20">box 20</div>
+          </div>
+          <div class="layer">
+            <div data-divValue="29">box 29</div>
+            <div data-divValue="H_B_3">H_B_3</div>
+            <div data-divValue="21">box 21</div>
+          </div>
+
+          <div class="layer">
+            <div data-divValue="28">box 28</div>
+            <div data-divValue="H_B_4">H_B_4</div>
+            <div data-divValue="22">box 22</div>
+          </div>
+          <div class="layer">
+            <div data-divValue="27">box 27</div>
+            <div data-divValue="H_B_5">H_B_5</div>
+            <div data-divValue="23">box 23</div>
+          </div>
+          <div class="layer">
+            <div data-divValue="26">box 26</div>
+            <div data-divValue="25">box 25</div>
+            <div data-divValue="24">box 24</div>
+          </div>
+        </div>
+        <div id="yellow">
+          <div>
+            <button type="button" onclick="onplayerClick(event)" value="yellow">
+              one
+            </button>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="yellow_two"
+            >
+              two
+            </button>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="yellow_three"
+            >
+              three
+            </button>
+            <button
+              type="button"
+              onclick="onplayerClick(event)"
+              value="yellow_four"
+            >
+              four
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- BOTTOM END -->
+    </div>
+
+    <button onclick="handleClick()">Click Me To Check Number</button>
+    <h1 id="number_click"></h1>
+    <h1></h1>
+    <script src="ludoScript.js"></script>
+  </body>
+</html>
