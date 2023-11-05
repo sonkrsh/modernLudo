@@ -3,28 +3,28 @@ let i = 0;
 
 const btn_values = {
   red: {
-    startValue: 40,
+    startValue: 41,
     red_one: { max: 51, current: -1 },
     red_two: { max: 51, current: -1 },
     red_three: { max: 51, current: -1 },
     red_four: { max: 51, current: -1 },
   },
   yellow: {
-    startValue: 14,
+    startValue: 15,
     yellow_one: { max: 51, current: -1 },
     yellow_two: { max: 51, current: -1 },
     yellow_three: { max: 51, current: -1 },
     yellow_four: { max: 51, current: -1 },
   },
   green: {
-    startValue: 1,
+    startValue: 2,
     green_one: { max: 51, current: -1 },
     green_two: { max: 51, current: -1 },
     green_three: { max: 51, current: -1 },
     green_four: { max: 51, current: -1 },
   },
   blue: {
-    startValue: 27,
+    startValue: 28,
     blue_one: { max: 51, current: -1 },
     blue_two: { max: 51, current: -1 },
     blue_three: { max: 51, current: -1 },
@@ -64,11 +64,22 @@ const onplayerClick = (e) => {
   } else {
     currentValue.current += dice;
     let combineValue = Number(startValue) + Number(currentValue.current);
-    console.log("--currentValue", combineValue);
-    if (combineValue > 51) {
-      const subValue = combineValue - 51;
+
+    if (currentValue.current > 50) {
+      const houseClass = `H_${extractParentName}_${currentValue.current + 2}`;
+      if (currentValue.current + 2 > 57) {
+        document.getElementById("winner").innerHTML = "winner";
+        e.target.classList.add("display_none");
+        return false;
+      }
+      combineValue = houseClass;
+    }
+    if (combineValue > 52) {
+      const subValue = combineValue - 52;
+
       combineValue = subValue;
     }
+
     document
       .querySelector(`[data-divValue='${combineValue}']`)
       .appendChild(e.target);
