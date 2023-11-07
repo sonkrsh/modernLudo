@@ -121,11 +121,15 @@ const removeSameCellElement = (currentParentName) => {
       if (x != currentParentName) {
         for (y in btn_values[x]) {
           const childBoxNo = btn_values[x][y]?.boxN0;
-
+          const safeMember =
+            document
+              .querySelector(`[data-divValue='${childBoxNo}']`)
+              ?.getAttribute("safe") === "true";
           if (
             parentBoxNo == childBoxNo &&
             typeof parentBoxNo != "string" &&
-            typeof parentBoxNo != "undefined"
+            typeof parentBoxNo != "undefined" &&
+            !safeMember
           ) {
             const node = document.querySelector(
               `[data-divValue='${parentBoxNo}']`
@@ -212,6 +216,9 @@ const onplayerClick = (e) => {
 
   dice = 0;
 };
-
+console.log(
+  "--",
+  document.querySelector(`[data-divValue='41']`).getAttribute("safe")
+);
 // const check = document.querySelector('[data-divValue="26"]');
 // check.style.backgroundColor = "green";
