@@ -2,10 +2,23 @@ let dice = 0;
 let i = 0;
 let activePlayer = 1;
 let previousDice = 0;
-
+let setTimeoutId = null;
 document.getElementById("red").style.border = "5px solid";
+document.getElementById("number_click").innerHTML = 0;
 
-const handleActivePlayer = (activePlayer) => {
+const handleSwitchPlayer = () => {
+  activePlayer++;
+  activePlayer = activePlayer % 5;
+  if (activePlayer == 0) {
+    activePlayer++;
+  }
+};
+
+const handleActivePlayer = (activePlayer, resetToZero) => {
+  if (resetToZero) {
+    document.getElementById("number_click").innerHTML = 0;
+    document.getElementsByClassName("genrateNo")[0].disabled = false;
+  }
   switch (activePlayer) {
     case 1:
       document.getElementById("red").style.border = "5px solid";
@@ -72,46 +85,31 @@ const btn_values = {
 const handleClick = () => {
   const random = (Math.random() * (7 - 1) + 1).toString().split(".")[0];
 
-  // const random = (Math.random() * (7 - 1) + 1).toString().split(".")[0];
   document.getElementById("number_click").innerHTML = random;
-
-  // if (i == 0) {
-  //   const list = document.getElementsByClassName("red_btn");
-  //   dice = 6;
-  //   // for (let i = 0; i < list.length; i++) {
-  //   //   list[i].disabled = false;
-  //   // }
-  //   i++;
-  // } else {
-  //   dice = Number(random);
-  // }
+  const activePlayerColor = handleActivePlayer(activePlayer);
   dice = Number(random);
   let returnFalse = true;
-  for (let x in btn_values[handleActivePlayer(activePlayer)]) {
-    const cv = btn_values[handleActivePlayer(activePlayer)][x]?.current;
+  for (let x in btn_values[activePlayerColor]) {
+    const cv = btn_values[activePlayerColor][x]?.current;
     if (x != "startValue" && cv.toString() != "-1") {
-      console.log("---aa", x);
-      console.log("---bb", cv.toString());
+      setTimeoutId = setTimeout(() => {
+        handleSwitchPlayer();
+        document.getElementsByClassName("genrateNo")[0].disabled = false;
+        handleActivePlayer(activePlayer, true);
+      }, 5000);
       returnFalse = false;
     }
   }
-  // if (returnFalse) {
-  //   previousDice = dice;
-  //   return false;
-  // }
 
   if (dice <= 5 && previousDice != 6 && returnFalse) {
-    console.log("--call");
-    activePlayer++;
-    activePlayer = activePlayer % 5;
-    if (activePlayer == 0) {
-      activePlayer++;
-    }
-    // console.log("-------", activePlayer);
+    handleSwitchPlayer();
+    setTimeout(() => {
+      handleActivePlayer(activePlayer, true);
+    }, 500);
   }
-  previousDice = dice;
+  document.getElementsByClassName("genrateNo")[0].disabled = true;
 
-  console.log("-----turn", handleActivePlayer(activePlayer));
+  previousDice = dice;
 };
 
 const removeSameCellElement = (currentParentName) => {
@@ -168,11 +166,9 @@ const onplayerClick = (e) => {
     handleActivePlayer(activePlayer) != extractParentName ||
     (dice <= 5 && currentValue.current == -1)
   ) {
-    console.log("--activePlayer", activePlayer);
     return false;
   }
 
-  console.log("====caalll");
   if (currentValue.current == -1) {
     currentValue.current = 0;
     document
@@ -204,21 +200,13 @@ const onplayerClick = (e) => {
     currentValue.boxN0 = combineValue;
     removeSameCellElement(extractParentName);
     if (dice != 6) {
-      activePlayer++;
-      activePlayer = activePlayer % 5;
-      if (activePlayer == 0) {
-        activePlayer++;
-      }
-
-      handleActivePlayer(activePlayer);
+      handleSwitchPlayer();
+      clearTimeout(setTimeoutId);
+      document.getElementsByClassName("genrateNo")[0].disabled = false;
+      handleActivePlayer(activePlayer, true);
     }
   }
+  document.getElementsByClassName("genrateNo")[0].disabled = false;
 
   dice = 0;
 };
-console.log(
-  "--",
-  document.querySelector(`[data-divValue='41']`).getAttribute("safe")
-);
-// const check = document.querySelector('[data-divValue="26"]');
-// check.style.backgroundColor = "green";

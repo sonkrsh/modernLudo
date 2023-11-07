@@ -69,3 +69,7 @@
 .safe {
     background-color: orange;
 }
+
+.timerSeconds {
+    color: red;
+}
