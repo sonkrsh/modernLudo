@@ -48,3 +48,19 @@
 .display_none {
     display: none;
 }
+
+.red_btn {
+    background-color: red;
+}
+
+.green_btn {
+    background-color: green;
+}
+
+.blue_btn {
+    background-color: blue;
+}
+
+.yellow_btn {
+    background-color: yellow;
+}
