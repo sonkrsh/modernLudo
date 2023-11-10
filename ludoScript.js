@@ -3,7 +3,13 @@ let i = 0;
 let activePlayer = 1;
 let previousDice = 0;
 let setTimeoutId = null;
-document.getElementById("red").style.border = "5px solid";
+// document.getElementById("red").style.border = "3px solid";
+// document.getElementById("red").style.boxShadow =
+//   "rgba(0, 0, 0, 2.2) 4px 6px 18px";
+
+// document.getElementById("red").style.background =
+//   "linear-gradient(-45deg, rgb(249, 249, 249) 0%, #E91E63 100%)";
+
 document.getElementById("number_click").innerHTML = 0;
 
 const handleSwitchPlayer = () => {
@@ -21,29 +27,33 @@ const handleActivePlayer = (activePlayer, resetToZero) => {
   }
   switch (activePlayer) {
     case 1:
-      document.getElementById("red").style.border = "5px solid";
-      document.getElementById("blue").style.border = "0px solid";
-      document.getElementById("yellow").style.border = "0px solid";
-      document.getElementById("green").style.border = "0px solid";
+      document.getElementById("red").style.boxShadow =
+        "rgba(0, 0, 0, 2.2) 4px 6px 18px";
+      document.getElementById("blue").style.boxShadow = "none";
+      document.getElementById("yellow").style.boxShadow = "none";
+      document.getElementById("green").style.boxShadow = "none";
       return "red";
     case 2:
-      document.getElementById("blue").style.border = "5px solid";
-      document.getElementById("red").style.border = "0px solid";
-      document.getElementById("yellow").style.border = "0px solid";
-      document.getElementById("green").style.border = "0px solid";
+      document.getElementById("blue").style.boxShadow =
+        "rgba(0, 0, 0, 2.2) 4px 6px 18px";
+      document.getElementById("red").style.boxShadow = "none";
+      document.getElementById("yellow").style.boxShadow = "none";
+      document.getElementById("green").style.boxShadow = "none";
       return "blue";
     case 3:
-      document.getElementById("yellow").style.border = "5px solid";
-      document.getElementById("blue").style.border = "0px solid";
-      document.getElementById("red").style.border = "0px solid";
-      document.getElementById("green").style.border = "0px solid";
+      document.getElementById("yellow").style.boxShadow =
+        "rgba(0, 0, 0, 2.2) 4px 6px 18px";
+      document.getElementById("blue").style.boxShadow = "none";
+      document.getElementById("red").style.boxShadow = "none";
+      document.getElementById("green").style.boxShadow = "none";
 
       return "yellow";
     case 4:
-      document.getElementById("green").style.border = "5px solid";
-      document.getElementById("yellow").style.border = "0px solid";
-      document.getElementById("blue").style.border = "0px solid";
-      document.getElementById("red").style.border = "0px solid";
+      document.getElementById("green").style.boxShadow =
+        "rgba(0, 0, 0, 2.2) 4px 6px 18px";
+      document.getElementById("yellow").style.boxShadow = "none";
+      document.getElementById("blue").style.boxShadow = "none";
+      document.getElementById("red").style.boxShadow = "none";
 
       return "green";
     default:
