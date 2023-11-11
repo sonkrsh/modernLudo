@@ -3,12 +3,7 @@ let i = 0;
 let activePlayer = 1;
 let previousDice = 0;
 let setTimeoutId = null;
-// document.getElementById("red").style.border = "3px solid";
-// document.getElementById("red").style.boxShadow =
-//   "rgba(0, 0, 0, 2.2) 4px 6px 18px";
-
-// document.getElementById("red").style.background =
-//   "linear-gradient(-45deg, rgb(249, 249, 249) 0%, #E91E63 100%)";
+let clearIntervalV = null;
 
 document.getElementById("number_click").innerHTML = 0;
 
@@ -18,6 +13,19 @@ const handleSwitchPlayer = () => {
   if (activePlayer == 0) {
     activePlayer++;
   }
+};
+
+const handleInterval = () => {
+  let i = 0;
+  return setInterval(() => {
+    i++;
+    document.getElementsByClassName("timerrr")[0].innerHTML = i;
+  }, 2000);
+};
+
+const clearIntervalFunction = (id) => {
+  clearInterval(id);
+  document.getElementsByClassName("timerrr")[0].innerHTML = 0;
 };
 
 const handleActivePlayer = (activePlayer, resetToZero) => {
@@ -101,11 +109,18 @@ const handleClick = () => {
   let returnFalse = true;
   for (let x in btn_values[activePlayerColor]) {
     const cv = btn_values[activePlayerColor][x]?.current;
-    if (x != "startValue" && cv.toString() != "-1") {
+    if (
+      x != "startValue" &&
+      cv.toString() != "-1" &&
+      dice != 6 &&
+      previousDice != 6
+    ) {
+      clearIntervalV = handleInterval();
       setTimeoutId = setTimeout(() => {
         handleSwitchPlayer();
         document.getElementsByClassName("genrateNo")[0].disabled = false;
         handleActivePlayer(activePlayer, true);
+        clearIntervalFunction(clearIntervalV);
       }, 5000);
       returnFalse = false;
     }
@@ -113,9 +128,11 @@ const handleClick = () => {
 
   if (dice <= 5 && previousDice != 6 && returnFalse) {
     handleSwitchPlayer();
-    setTimeout(() => {
+
+    const id = setTimeout(() => {
       handleActivePlayer(activePlayer, true);
-    }, 500);
+      clearTimeout(id);
+    }, 1000);
   }
   document.getElementsByClassName("genrateNo")[0].disabled = true;
 
@@ -148,8 +165,6 @@ const removeSameCellElement = (currentParentName) => {
                 .getAttribute("value")
                 .split("_")[0];
               if (allButtonText != currentParentName) {
-                console.log("first", allButtonText);
-                console.log("second", totalButton[i]);
                 document
                   .getElementById(`${allButtonText}_container`)
                   .appendChild(totalButton[i]);
@@ -209,9 +224,10 @@ const onplayerClick = (e) => {
       .appendChild(e.target);
     currentValue.boxN0 = combineValue;
     removeSameCellElement(extractParentName);
-    if (dice != 6) {
+    if (dice != 6 && previousDice != 6) {
       handleSwitchPlayer();
       clearTimeout(setTimeoutId);
+      clearIntervalFunction(clearIntervalV);
       document.getElementsByClassName("genrateNo")[0].disabled = false;
       handleActivePlayer(activePlayer, true);
     }

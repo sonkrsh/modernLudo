@@ -49,13 +49,19 @@ body {
 }
 
 #red {
-    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #E91E63 100%);
     width: 35%;
 }
 
+.red_background {
+    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #E91E63 100%);
+}
+
 #yellow {
-    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #cbe91e 100%);
     width: 35%;
+}
+
+.yellow_background {
+    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #cbe91e 100%);
 }
 
 .layer div {
@@ -69,13 +75,19 @@ body {
 }
 
 #blue {
-    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #2196F3 100%);
     width: 35%;
 }
 
+.blue_background {
+    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #2196F3 100%);
+}
+
 #green {
-    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #1fed90 100%);
     width: 35%;
+}
+
+.green_background {
+    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #1fed90 100%);
 }
 
 .display_none {
