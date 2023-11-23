@@ -164,6 +164,8 @@ button {
 }
 
 .star_style {
+    position: absolute;
+    z-index: -1;
     border: 0px solid !important;
     align-items: center;
     height: 100%;
