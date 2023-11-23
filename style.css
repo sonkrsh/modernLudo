@@ -4,7 +4,8 @@ body {
 }
 
 .main {
-    height: 100vh;
+    height: 80vh;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -28,10 +29,13 @@ body {
 
 
 .top,
-.middle,
 .bottom {
-    height: 33%;
+    height: 38%;
     width: 100%;
+}
+
+.middle {
+    height: 24%;
 }
 
 .corner_box {
@@ -45,28 +49,52 @@ body {
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #red {
     width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#common_container {
+    padding: 2rem;
+    background-color: white;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45%;
+    flex-direction: column;
+}
+
+.btn__layer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .red_background {
-    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #E91E63 100%);
+    background: red;
 }
 
 #yellow {
     width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .yellow_background {
-    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #cbe91e 100%);
+    background: yellow
 }
 
 .layer div {
     border: 1px solid;
-    width: 30%;
+    width: 33%;
 }
 
 .inner_box div {
@@ -76,18 +104,25 @@ body {
 
 #blue {
     width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+
 .blue_background {
-    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #2196F3 100%);
+    background: #7fafe7
 }
 
 #green {
     width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .green_background {
-    background: linear-gradient(-45deg, rgb(249, 249, 249) 0%, #1fed90 100%);
+    background: green
 }
 
 .display_none {
@@ -110,10 +145,36 @@ body {
     background-color: yellow;
 }
 
-.safe {
-    background-color: orange;
-}
+
 
 .timerSeconds {
     color: red;
+}
+
+button {
+    border-radius: 2rem;
+    height: 2.5rem;
+    width: 30%;
+    border: 1px solid;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
+.star_style {
+    border: 0px solid !important;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    width: 100% !important;
+    font-size: 19px
+}
+
+._dynamicDice {
+    padding-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

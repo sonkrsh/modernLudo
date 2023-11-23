@@ -5,325 +5,384 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ludo</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <div class="main">
-      <!--   TOP  -->
-      <div class="top">
-        <div id="red" class="red_background">
-          <div id="red_container">
-            <button
-              class="red_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="red_one"
-            >
-              one
-            </button>
-            <button
-              class="red_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="red_two"
-            >
-              two
-            </button>
-            <button
-              class="red_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="red_three"
-            >
-              three
-            </button>
-            <button
-              class="red_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="red_four"
-            >
-              four
-            </button>
-          </div>
-        </div>
-        <div class="box">
-          <div class="layer">
-            <div data-divValue="51">box 51</div>
-            <div data-divValue="52">box 52</div>
-            <div data-divValue="1">box 1</div>
-          </div>
-
-          <div class="layer">
-            <div data-divValue="50">box 50</div>
-            <div data-divValue="H_green_53">H_G_53</div>
-            <div data-divValue="2" class="safe green_background" safe="true">
-              box 2
-            </div>
-          </div>
-          <div class="layer">
-            <div data-divValue="49" class="safe" safe="true">box 49</div>
-            <div data-divValue="H_green_54">H_G_54</div>
-            <div data-divValue="3">box 3</div>
-          </div>
-
-          <div class="layer">
-            <div data-divValue="48">box 48</div>
-            <div data-divValue="H_green_55">H_G_55</div>
-            <div data-divValue="4">box 4</div>
-          </div>
-          <div class="layer">
-            <div data-divValue="47">box 47</div>
-            <div data-divValue="H_green_56">H_G_56</div>
-            <div data-divValue="5">box 5</div>
-          </div>
-          <div class="layer">
-            <div data-divValue="46">box 46</div>
-            <div data-divValue="H_green_57">H_G_57</div>
-            <div data-divValue="6">box 6</div>
-          </div>
-        </div>
-        <div id="green" class="green_background">
-          <div id="green_container">
-            <button
-              class="green_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="green_one"
-            >
-              one
-            </button>
-            <button
-              class="green_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="green_two"
-            >
-              two
-            </button>
-            <button
-              class="green_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="green_three"
-            >
-              three
-            </button>
-            <button
-              class="green_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="green_four"
-            >
-              four
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- TOP END -->
-
-      <!-- MIDDLE -->
-      <div class="middle">
-        <div class="corner_box">
-          <div class="inner_box">
-            <div data-divValue="40">box 40</div>
-            <div data-divValue="41" class="safe red_background" safe="true">
-              box 41
-            </div>
-            <div data-divValue="42">box 42</div>
-            <div data-divValue="43">box 43</div>
-            <div data-divValue="44">box 44</div>
-            <div data-divValue="45">box 45</div>
-          </div>
-          <div class="inner_box">
-            <div data-divValue="39">box 39</div>
-            <div data-divValue="H_red_53">H_R_53</div>
-            <div data-divValue="H_red_54">H_R_54</div>
-            <div data-divValue="H_red_55">H_R_55</div>
-            <div data-divValue="H_red_56">H_R_56</div>
-            <div data-divValue="H_red_57">H_R_57</div>
-          </div>
-          <div class="inner_box">
-            <div data-divValue="38">box 38</div>
-            <div data-divValue="37">box 37</div>
-            <div data-divValue="36" class="safe" safe="true">box 36</div>
-            <div data-divValue="35">box 35</div>
-            <div data-divValue="34">box 34</div>
-            <div data-divValue="33">box 33</div>
-          </div>
-        </div>
-        <div class="box _dynamicDice">
-          <div class="layer">
-            <button class="genrateNo" onclick="handleClick()">
-              Click Me To Check Number
-            </button>
-            <span style="color: red">
-              <div style="border: 0px">
-                timer:- <span class="timerrr"></span>
+    <div class="super_main" style="display: flex; justify-content: center">
+      <div class="main">
+        <!--   TOP  -->
+        <div class="top">
+          <div id="red" class="red_background">
+            <div id="common_container">
+              <div class="btn__layer">
+                <button
+                  class="red_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="red_one"
+                >
+                  1
+                </button>
+                <button
+                  class="red_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="red_two"
+                >
+                  2
+                </button>
               </div>
-            </span>
-
-            <h1 id="number_click"></h1>
-            <!-- <div>l</div>
-            <div>m</div>
-            <div>r</div> -->
-          </div>
-
-          <div class="layer">
-            <!-- <div>l</div>
-            <div>m</div>
-            <div>r</div> -->
-          </div>
-          <div class="layer">
-            <!-- <div>l</div>
-            <div>m</div>
-            <div>r</div> -->
-          </div>
-        </div>
-        <div class="corner_box">
-          <div class="inner_box">
-            <div data-divValue="7">box 7</div>
-            <div data-divValue="8">box 8</div>
-            <div data-divValue="9">box 9</div>
-            <div data-divValue="10" class="safe" safe="true">box 10</div>
-            <div data-divValue="11">box 11</div>
-            <div data-divValue="12">box 12</div>
-          </div>
-          <div class="inner_box">
-            <div data-divValue="H_yellow_57">H_Y_57</div>
-            <div data-divValue="H_yellow_56">H_Y_56</div>
-            <div data-divValue="H_yellow_55">H_Y_55</div>
-            <div data-divValue="H_yellow_54">H_Y_54</div>
-            <div data-divValue="H_yellow_53">H_Y_53</div>
-            <div data-divValue="13">box 13</div>
-          </div>
-          <div class="inner_box">
-            <div data-divValue="19">box 19</div>
-            <div data-divValue="18">box 18</div>
-            <div data-divValue="17">box 17</div>
-            <div data-divValue="16">box 16</div>
-            <div data-divValue="15" class="safe yellow_background" safe="true">
-              box 15
+              <div class="btn__layer">
+                <button
+                  class="red_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="red_three"
+                >
+                  3
+                </button>
+                <button
+                  class="red_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="red_four"
+                >
+                  4
+                </button>
+              </div>
             </div>
-            <div data-divValue="14">box 14</div>
           </div>
-        </div>
-      </div>
-      <!-- MIDDLE END-->
-
-      <!--  BOTTOM   -->
-      <div class="bottom">
-        <div id="blue" class="blue_background">
-          <div id="blue_container">
-            <button
-              class="blue_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="blue_one"
-            >
-              one
-            </button>
-            <button
-              class="blue_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="blue_two"
-            >
-              two
-            </button>
-            <button
-              class="blue_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="blue_three"
-            >
-              three
-            </button>
-            <button
-              class="blue_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="blue_four"
-            >
-              four
-            </button>
-          </div>
-        </div>
-        <div class="box">
-          <div class="layer">
-            <div data-divValue="32">box 32</div>
-            <div data-divValue="H_blue_57">H_B_57</div>
-            <div data-divValue="20">box 20</div>
-          </div>
-
-          <div class="layer">
-            <div data-divValue="31">box 31</div>
-            <div data-divValue="H_blue_56">H_B_56</div>
-            <div data-divValue="21">box 21</div>
-          </div>
-          <div class="layer">
-            <div data-divValue="30">box 30</div>
-            <div data-divValue="H_blue_55">H_B_55</div>
-            <div data-divValue="22">box 22</div>
-          </div>
-
-          <div class="layer">
-            <div data-divValue="29">box 29</div>
-            <div data-divValue="H_blue_54">H_B_54</div>
-            <div data-divValue="23" class="safe" safe="true">box 23</div>
-          </div>
-          <div class="layer">
-            <div data-divValue="28" class="safe blue_background" safe="true">
-              box 28
+          <div class="box">
+            <div class="layer">
+              <div data-divValue="51">box 51</div>
+              <div data-divValue="52">
+                <div class="star_style" style="color: green">&#8595;</div>
+              </div>
+              <div data-divValue="1">box 1</div>
             </div>
-            <div data-divValue="H_blue_53">H_B_53</div>
-            <div data-divValue="24">box 24</div>
+
+            <div class="layer">
+              <div data-divValue="50">box 50</div>
+              <div data-divValue="H_green_53" class="green_background">
+                H_G_53
+              </div>
+              <div data-divValue="2" class="green_background" safe="true">
+                box 2
+              </div>
+            </div>
+            <div class="layer">
+              <div data-divValue="49" class="safe" safe="true">
+                <div class="star_style">&#11088;</div>
+              </div>
+              <div data-divValue="H_green_54" class="green_background">
+                H_G_54
+              </div>
+              <div data-divValue="3">box 3</div>
+            </div>
+
+            <div class="layer">
+              <div data-divValue="48">box 48</div>
+              <div data-divValue="H_green_55" class="green_background">
+                H_G_55
+              </div>
+              <div data-divValue="4">box 4</div>
+            </div>
+            <div class="layer">
+              <div data-divValue="47">box 47</div>
+              <div data-divValue="H_green_56" class="green_background">
+                H_G_56
+              </div>
+              <div data-divValue="5">box 5</div>
+            </div>
+            <div class="layer">
+              <div data-divValue="46">box 46</div>
+              <div data-divValue="H_green_57" class="green_background">
+                H_G_57
+              </div>
+              <div data-divValue="6">box 6</div>
+            </div>
           </div>
-          <div class="layer">
-            <div data-divValue="27">box 27</div>
-            <div data-divValue="26">box 26</div>
-            <div data-divValue="25">box 25</div>
+          <div id="green" class="green_background">
+            <div id="common_container">
+              <div class="btn__layer">
+                <button
+                  class="green_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="green_one"
+                >
+                  1
+                </button>
+                <button
+                  class="green_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="green_two"
+                >
+                  2
+                </button>
+              </div>
+
+              <div class="btn__layer">
+                <button
+                  class="green_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="green_three"
+                >
+                  3
+                </button>
+                <button
+                  class="green_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="green_four"
+                >
+                  4
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div id="yellow" class="yellow_background">
-          <div id="yellow_container">
-            <button
-              class="yellow_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="yellow"
-            >
-              one
-            </button>
-            <button
-              class="yellow_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="yellow_two"
-            >
-              two
-            </button>
-            <button
-              class="yellow_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="yellow_three"
-            >
-              three
-            </button>
-            <button
-              class="yellow_btn"
-              type="button"
-              onclick="onplayerClick(event)"
-              value="yellow_four"
-            >
-              four
-            </button>
+        <!-- TOP END -->
+
+        <!-- MIDDLE -->
+        <div class="middle">
+          <div class="corner_box">
+            <div class="inner_box">
+              <div data-divValue="40">box 40</div>
+              <div data-divValue="41" class="red_background" safe="true">
+                box 41
+              </div>
+              <div data-divValue="42">box 42</div>
+              <div data-divValue="43">box 43</div>
+              <div data-divValue="44">box 44</div>
+              <div data-divValue="45">box 45</div>
+            </div>
+            <div class="inner_box">
+              <div data-divValue="39">
+                <div class="star_style" style="color: red">&#8594;</div>
+              </div>
+              <div data-divValue="H_red_53" class="red_background">H_R_53</div>
+              <div data-divValue="H_red_54" class="red_background">H_R_54</div>
+              <div data-divValue="H_red_55" class="red_background">H_R_55</div>
+              <div data-divValue="H_red_56" class="red_background">H_R_56</div>
+              <div data-divValue="H_red_57" class="red_background">H_R_57</div>
+            </div>
+            <div class="inner_box">
+              <div data-divValue="38">box 38</div>
+              <div data-divValue="37">box 37</div>
+              <div data-divValue="36" class="safe" safe="true">
+                <div class="star_style">&#11088;</div>
+              </div>
+              <div data-divValue="35">box 35</div>
+              <div data-divValue="34">box 34</div>
+              <div data-divValue="33">box 33</div>
+            </div>
+          </div>
+
+          <div class="corner_box">
+            <div class="inner_box">
+              <div data-divValue="7">box 7</div>
+              <div data-divValue="8">box 8</div>
+              <div data-divValue="9">box 9</div>
+              <div data-divValue="10" class="safe" safe="true">
+                <div class="star_style">&#11088;</div>
+              </div>
+              <div data-divValue="11">box 11</div>
+              <div data-divValue="12">box 12</div>
+            </div>
+            <div class="inner_box">
+              <div data-divValue="H_yellow_57" class="yellow_background">
+                H_Y_57
+              </div>
+              <div data-divValue="H_yellow_56" class="yellow_background">
+                H_Y_56
+              </div>
+              <div data-divValue="H_yellow_55" class="yellow_background">
+                H_Y_55
+              </div>
+              <div data-divValue="H_yellow_54" class="yellow_background">
+                H_Y_54
+              </div>
+              <div data-divValue="H_yellow_53" class="yellow_background">
+                H_Y_53
+              </div>
+              <div data-divValue="13">
+                <div class="star_style" style="color: rgb(133, 133, 8)">
+                  &#8592;
+                </div>
+              </div>
+            </div>
+            <div class="inner_box">
+              <div data-divValue="19">box 19</div>
+              <div data-divValue="18">box 18</div>
+              <div data-divValue="17">box 17</div>
+              <div data-divValue="16">box 16</div>
+              <div data-divValue="15" class="yellow_background" safe="true">
+                box 15
+              </div>
+              <div data-divValue="14">box 14</div>
+            </div>
           </div>
         </div>
+        <!-- MIDDLE END-->
+
+        <!--  BOTTOM   -->
+        <div class="bottom">
+          <div id="blue" class="blue_background">
+            <div id="common_container">
+              <div class="btn__layer">
+                <button
+                  class="blue_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="blue_one"
+                >
+                  1
+                </button>
+                <button
+                  class="blue_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="blue_two"
+                >
+                  2
+                </button>
+              </div>
+
+              <div class="btn__layer">
+                <button
+                  class="blue_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="blue_three"
+                >
+                  3
+                </button>
+                <button
+                  class="blue_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="blue_four"
+                >
+                  4
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="layer">
+              <div data-divValue="32">box 32</div>
+              <div data-divValue="H_blue_57" class="blue_background">
+                H_B_57
+              </div>
+              <div data-divValue="20">box 20</div>
+            </div>
+
+            <div class="layer">
+              <div data-divValue="31">box 31</div>
+              <div data-divValue="H_blue_56" class="blue_background">
+                H_B_56
+              </div>
+              <div data-divValue="21">box 21</div>
+            </div>
+            <div class="layer">
+              <div data-divValue="30">box 30</div>
+              <div data-divValue="H_blue_55" class="blue_background">
+                H_B_55
+              </div>
+              <div data-divValue="22">box 22</div>
+            </div>
+
+            <div class="layer">
+              <div data-divValue="29">box 29</div>
+              <div data-divValue="H_blue_54" class="blue_background">
+                H_B_54
+              </div>
+              <div data-divValue="23" class="safe" safe="true">
+                <div class="star_style">&#11088;</div>
+              </div>
+            </div>
+            <div class="layer">
+              <div data-divValue="28" class="blue_background" safe="true">
+                box 28
+              </div>
+              <div data-divValue="H_blue_53" class="blue_background">
+                H_B_53
+              </div>
+              <div data-divValue="24">box 24</div>
+            </div>
+            <div class="layer">
+              <div data-divValue="27">box 27</div>
+              <div data-divValue="26">
+                <div class="star_style" style="color: blue">&#8593;</div>
+              </div>
+              <div data-divValue="25">box 25</div>
+            </div>
+          </div>
+          <div id="yellow" class="yellow_background">
+            <div id="common_container">
+              <div class="btn__layer">
+                <button
+                  class="yellow_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="yellow"
+                >
+                  1
+                </button>
+                <button
+                  class="yellow_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="yellow_two"
+                >
+                  2
+                </button>
+              </div>
+              <div class="btn__layer">
+                <button
+                  class="yellow_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="yellow_three"
+                >
+                  3
+                </button>
+                <button
+                  class="yellow_btn"
+                  type="button"
+                  onclick="onplayerClick(event)"
+                  value="yellow_four"
+                >
+                  4
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- BOTTOM END -->
       </div>
-      <!-- BOTTOM END -->
     </div>
+    <div class="_dynamicDice">
+      <div class="layer" style="width: 50%">
+        <button class="genrateNo" onclick="handleClick()">
+          Click Me To Check Number
+        </button>
+        <span style="color: red">
+          <div style="border: 0px">timer:- <span class="timerrr"></span></div>
+        </span>
 
+        <h1 id="number_click"></h1>
+        <!-- <div>l</div>
+        <div>m</div>
+        <div>r</div> -->
+      </div>
+    </div>
     <h1 id="winner"></h1>
 
     <script src="ludoScript.js"></script>
